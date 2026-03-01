@@ -1,52 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Community Home</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fusion Research Facility</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .title-font { font-family: 'Orbitron', sans-serif; }
+
+    /* Sci-fi glow */
+    .glow {
+      box-shadow: 0 0 25px rgba(34, 211, 238, 0.35);
+    }
+
+    .neon-text {
+      text-shadow:
+        0 0 5px rgba(34,211,238,.9),
+        0 0 15px rgba(34,211,238,.6),
+        0 0 30px rgba(34,211,238,.4);
+    }
+
+    /* Animated grid background */
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(0,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,255,0.06) 1px, transparent 1px);
+      background-size: 40px 40px;
+      animation: gridMove 20s linear infinite;
+    }
+
+    @keyframes gridMove {
+      from { background-position: 0 0, 0 0; }
+      to { background-position: 40px 40px, 40px 40px; }
+    }
+  </style>
 </head>
-<body>
+<body class="bg-slate-950 text-white">
 
-<!-- Navigation -->
-<nav>
-  <div class="logo">
-    <img src="images/logo.png" alt="Logo">
-    <h1>Community</h1>
-  </div>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="team.html">Team</a></li>
-    <li><a href="games.html">Games</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- Hero Section -->
-<section class="hero">
-  <h2>Welcome To Our Gaming Community</h2>
-  <p>Explore our games, meet the developers, and connect with our amazing community.</p>
-  <a class="button" href="games.html">Explore Games</a>
-</section>
-
-<!-- Games Section -->
-<section class="section">
-  <h2>Our Games</h2>
-  <div class="cards">
-    <div class="card">
-      <img src="images/game1.png" alt="Game 1">
-      <h3>Game Title 1</h3>
-      <p>Short description of the game.</p>
+  <!-- Navbar -->
+  <nav class="fixed w-full z-50 bg-slate-950/80 backdrop-blur border-b border-cyan-500/20">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="title-font text-xl font-bold text-cyan-400 neon-text">
+        Fusion Research Facility
+      </h1>
+      <div class="space-x-6 text-sm">
+        <a href="#about" class="hover:text-cyan-400">About</a>
+        <a href="#history" class="hover:text-cyan-400">History</a>
+        <a href="#team" class="hover:text-cyan-400">Team</a>
+        <a href="#links" class="hover:text-cyan-400">Links</a>
+      </div>
     </div>
-    <div class="card">
-      <img src="images/game2.png" alt="Game 2">
-      <h3>Game Title 2</h3>
-      <p>Short description of the game.</p>
-    </div>
-  </div>
-</section>
+  </nav>
 
-<footer>© 2026 Your Community</footer>
+  <!-- Hero -->
+  <section class="pt-32 pb-28 text-center relative overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-40"></div>
+
+    <div class="relative z-10">
+      <h2 class="title-font text-5xl md:text-6xl font-bold text-cyan-400 mb-6 neon-text">
+        Fusion Research Facility
+      </h2>
+      <p class="max-w-2xl mx-auto text-slate-300 text-lg">
+        A classified high-tech laboratory where experiments push the limits of science.
+        Explore sectors, survive facility events, and uncover the truth.
+      </p>
+
+      <div class="mt-10 flex justify-center gap-4 flex-wrap">
+        <!-- 🔴 REPLACE THESE LINKS -->
+        <a href="#" class="px-8 py-3 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold rounded-2xl glow transition">
+          ▶ Play on Roblox
+        </a>
+        <a href="#links" class="px-8 py-3 border border-cyan-400 hover:bg-cyan-400/10 rounded-2xl transition">
+          Join Community
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-24 px-6 max-w-6xl mx-auto">
+    <h3 class="title-font text-3xl font-bold text-cyan-400 mb-6 neon-text">
+      About the Game
+    </h3>
+    <p class="text-slate-300 leading-relaxed">
+      Fusion Research Facility is an immersive Roblox sci-fi experience set inside a
+      futuristic research complex. Players can roleplay as staff, security, scientists,
+      or visitors while interacting with advanced systems and dynamic facility events.
+      The game focuses on atmosphere, teamwork, and high-tech immersion.
+    </p>
+  </section>
+
+  <!-- History -->
+  <section id="history" class="py-24 px-6 bg-slate-900/40">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="title-font text-3xl font-bold text-cyan-400 mb-10 neon-text">
+        Game History
+      </h3>
+
+      <div class="space-y-6 text-slate-300">
+        <div class="p-6 rounded-2xl bg-slate-900 border border-cyan-500/20 glow">
+          <h4 class="font-semibold text-cyan-300">Initial Development</h4>
+          <p>The project started as a small experimental facility concept focused on immersive roleplay.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900 border border-cyan-500/20 glow">
+          <h4 class="font-semibold text-cyan-300">Major Expansion</h4>
+          <p>New sectors, improved systems, and enhanced sci-fi visuals expanded the facility.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900 border border-cyan-500/20 glow">
+          <h4 class="font-semibold text-cyan-300">Current Era</h4>
+          <p>The facility continues evolving with frequent updates and community-driven features.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team" class="py-24 px-6 max-w-7xl mx-auto">
+    <h3 class="title-font text-3xl font-bold text-cyan-400 mb-12 text-center neon-text">
+      Facility Personnel
+    </h3>
+
+    <!-- Developers -->
+    <div class="mb-20">
+      <h4 class="text-2xl font-semibold mb-6 text-cyan-300">Developers (10)</h4>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+        <div class="p-4 bg-slate-900 rounded-2xl border border-cyan-500/20 text-center glow">Dev 1</div>
+        <div class="p-4 bg-slate-900 rounded-2xl border border-cyan-500/20 text-center glow">Dev 2</div>
+        <div class="p-4 bg-slate-900 rounded-2xl border border-cyan-500/20 text-center glow">Dev 3</div>
+        <div class="p-4 bg-slate-900 rounded-2xl border border-cyan-500/20 text-center glow">Dev 4</div>
+        <div class="p-4 bg-slate-900 rounded-2xl border border-cyan-500/20 text-center glow">Dev 5</div>
+        <div class="p-4 bg-slate-900 rounded-2xl border border-cyan-500/20 text-center glow">Dev 6</div>
+        <div class="p-4 bg-slate-900 rounded-2xl border border-cyan-500/20 text-center glow">Dev 7</div>
+        <div class="p-4 bg-slate-900 rounded-2xl border border-cyan-500/20 text-center glow">Dev 8</div>
+        <div class="p-4 bg-slate-900 rounded-2xl border border-cyan-500/20 text-center glow">Dev 9</div>
+        <div class="p-4 bg-slate-900 rounded-2xl border border-cyan-500/20 text-center glow">Dev 10</div>
+      </div>
+    </div>
+
+    <!-- Moderators -->
+    <div>
+      <h4 class="text-2xl font-semibold mb-6 text-cyan-300">Moderators (7)</h4>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="p-4 bg-slate-900 rounded-2xl border border-cyan-500/20 text-center glow">Mod 1</div>
+        <div class="p-4 bg-slate-900 rounded-2xl border border-cyan-500/20 text-center glow">Mod 2</div>
+        <div class="p-4 bg-slate-900 rounded-2xl border border-cyan-500/20 text-center glow">Mod 3</div>
+        <div class="p-4 bg-slate-900 rounded-2xl border border-cyan-500/20 text-center glow">Mod 4</div>
+        <div class="p-4 bg-slate-900 rounded-2xl border border-cyan-500/20 text-center glow">Mod 5</div>
+        <div class="p-4 bg-slate-900 rounded-2xl border border-cyan-500/20 text-center glow">Mod 6</div>
+        <div class="p-4 bg-slate-900 rounded-2xl border border-cyan-500/20 text-center glow">Mod 7</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Links -->
+  <section id="links" class="py-24 px-6 bg-slate-900/40">
+    <div class="max-w-4xl mx-auto text-center">
+      <h3 class="title-font text-3xl font-bold text-cyan-400 mb-10 neon-text">
+        Community Links
+      </h3>
+
+      <!-- 🔴 REPLACE THESE LINKS -->
+      <div class="flex flex-wrap justify-center gap-6">
+        <a href="#" class="px-8 py-4 bg-indigo-500 hover:bg-indigo-400 rounded-2xl font-semibold shadow-lg">
+          Discord Server
+        </a>
+        <a href="#" class="px-8 py-4 bg-green-500 hover:bg-green-400 rounded-2xl font-semibold shadow-lg">
+          Roblox Group
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 text-center text-slate-500 border-t border-slate-800">
+    © 2026 Fusion Research Facility. All rights reserved.
+  </footer>
 
 </body>
 </html>
