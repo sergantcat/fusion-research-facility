@@ -26,6 +26,19 @@
     }
     @keyframes float { from { transform: translateY(0); } to { transform: translateY(-120vh); } }
 
+    /* TOP LOGO */
+    .top-logo {
+      text-align: center;
+      padding: 30px 20px 10px;
+    }
+
+    .top-logo img {
+      max-width: 260px;
+      width: 70%;
+      height: auto;
+      filter: drop-shadow(0 0 18px rgba(77,163,255,0.45));
+    }
+
     /* NAVBAR */
     nav {
       position: sticky;
@@ -35,12 +48,10 @@
       border-bottom: 1px solid rgba(77,163,255,0.25);
       padding: 14px 20px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       z-index: 1000;
     }
-
-    .logo { font-weight: 700; font-size: 1.2rem; letter-spacing: 1px; color: #7ec3ff; }
 
     .nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
     .nav-links a {
@@ -59,7 +70,7 @@
       margin: auto;
       padding: 90px 20px;
       text-align: center;
-      scroll-margin-top: 80px; /* FIXES NAV OVERLAP */
+      scroll-margin-top: 80px;
     }
 
     h1, h2 { margin-bottom: 14px; letter-spacing: 1px; }
@@ -109,12 +120,13 @@
 
     /* MOBILE */
     @media (max-width: 600px) {
-      .nav-links { gap: 10px; }
       section { padding: 70px 16px; }
+      .top-logo img { max-width: 200px; }
     }
   </style></head>
-<body>  <div id="particles"></div>  <!-- NAVIGATION (FIXED) -->  <nav>
-    <div class="logo">Fusion Research Facility</div>
+<body>  <div id="particles"></div>  <!-- GAME LOGO (PUTS YOUR logo.png ABOVE EVERYTHING) -->  <div class="top-logo">
+    <img src="logo.png" alt="Fusion Research Facility Logo">
+  </div>  <!-- NAVIGATION -->  <nav>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#history">History</a>
@@ -124,15 +136,15 @@
   </nav>  <!-- ABOUT -->  <section id="about">
     <h1>About The Game</h1>
     <p>
-      Fusion Research Facility is a sci‑fi Roblox experience where players manage,
-      operate, and survive inside a high‑tech experimental fusion reactor complex.
+      Fusion Research Facility is a sci-fi Roblox experience where players manage,
+      operate, and survive inside a high-tech experimental fusion reactor complex.
       Work together, prevent meltdowns, and explore the facility.
     </p>
   </section>  <!-- HISTORY -->  <section id="history">
     <h2>Game History</h2>
     <p>
       The facility began as a small experimental project and has grown into a
-      full‑scale research complex. Through many updates and improvements, the
+      full-scale research complex. Through many updates and improvements, the
       game continues to evolve with new systems, areas, and challenges.
     </p>
   </section>  <!-- STAFF -->  <section id="staff">
@@ -162,7 +174,6 @@
     }
 
     /* ===== AUTO ROBLOX AVATARS ===== */
-
     const developers = [
       "Roblox", "Builderman", "Dev3", "Dev4", "Dev5",
       "Dev6", "Dev7", "Dev8", "Dev9", "Dev10"
