@@ -9,9 +9,21 @@
 body{
   margin:0;
   font-family: Arial, Helvetica, sans-serif;
-  background:linear-gradient(180deg,#050914,#0b1224);
+  background:linear-gradient(180deg,#040814,#0b1224);
   color:white;
-  text-align:center;
+  overflow-x:hidden;
+}
+
+/* ===== PARTICLES ===== */
+#particles{
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index:-1;
+  background:
+    radial-gradient(2px 2px at 20% 30%, #6aa7ff, transparent),
+    radial-gradient(2px 2px at 70% 60%, #6aa7ff, transparent),
+    radial-gradient(1px 1px at 40% 80%, #6aa7ff, transparent);
 }
 
 /* ===== NAVBAR ===== */
@@ -29,6 +41,7 @@ body{
 .navbar a{
   color:white;
   text-decoration:none;
+  cursor:pointer;
   transition:.25s;
 }
 
@@ -38,18 +51,26 @@ body{
 
 /* ===== LOGO ===== */
 .logo{
+  text-align:center;
   margin-top:25px;
 }
 
 .logo img{
-  width:150px;
+  width:160px;
   max-width:80%;
 }
 
-/* ===== SECTION ===== */
-.section{
-  margin-top:50px;
-  padding:20px;
+/* ===== SECTIONS ===== */
+.page{
+  display:none;
+  opacity:0;
+  transition:opacity .35s ease;
+  padding:40px 20px;
+}
+
+.page.active{
+  display:block;
+  opacity:1;
 }
 
 /* ===== GRID ===== */
@@ -66,6 +87,7 @@ body{
   background:#121a2f;
   padding:18px;
   border-radius:16px;
+  text-align:center;
   transition:.25s;
   box-shadow:0 0 15px rgba(0,0,0,.4);
 }
@@ -81,7 +103,6 @@ body{
   height:110px;
   border-radius:50%;
   margin-bottom:10px;
-  border:2px solid #6aa7ff33;
 }
 
 .role{
@@ -91,22 +112,21 @@ body{
 
 /* ===== MOBILE ===== */
 @media(max-width:600px){
-  .navbar{
-    gap:18px;
-    font-size:14px;
-  }
+  .navbar{ gap:18px; font-size:14px; }
 }
 </style>
 </head>
 
 <body>
 
+<div id="particles"></div>
+
 <!-- ===== NAV ===== -->
 <div class="navbar">
-  <a href="#">FUSION RESEARCH FACILITY</a>
-  <a href="#">ABOUT</a>
-  <a href="#">STAFF</a>
-  <a href="#">LINKS</a>
+  <a onclick="showPage('home')">FUSION RESEARCH FACILITY</a>
+  <a onclick="showPage('about')">ABOUT</a>
+  <a onclick="showPage('staff')">STAFF</a>
+  <a onclick="showPage('links')">LINKS</a>
 </div>
 
 <!-- ===== LOGO ===== -->
@@ -114,24 +134,50 @@ body{
   <img src="logo.png" alt="Fusion Logo">
 </div>
 
-<!-- ================= DEVELOPERS ================= -->
-<div class="section">
-  <h2>Developers</h2>
-  <div class="staff-grid" id="devGrid"></div>
+<!-- ================= HOME ================= -->
+<div id="home" class="page active">
+  <h1>Welcome to Fusion Research Facility</h1>
+  <p>Advanced research. Elite containment. Future technology.</p>
 </div>
 
-<!-- ================= MODERATORS ================= -->
-<div class="section">
-  <h2>Moderators</h2>
+<!-- ================= ABOUT ================= -->
+<div id="about" class="page">
+  <h1>About Us</h1>
+  <p>
+    Fusion Research Facility is a high-security scientific organization
+    dedicated to advanced experimentation, anomaly research, and
+    technological innovation within the Roblox universe.
+  </p>
+</div>
+
+<!-- ================= STAFF ================= -->
+<div id="staff" class="page">
+  <h1>Developers</h1>
+  <divx class="staff-grid" id="devGrid"></div>
+
+  <h1 style="margin-top:60px;">Moderators</h1>
   <div class="staff-grid" id="modGrid"></div>
 </div>
 
-<script>
-// =================================================
-// 🔥 EDIT ONLY USERIDS + NAMES
-// =================================================
+<!-- ================= LINKS ================= -->
+<div id="links" class="page">
+  <h1>Links</h1>
+  <p>🔗 Roblox Group: (put your link)</p>
+  <p>💬 Discord: (put your link)</p>
+</div>
 
-// ===== 10 DEVELOPERS =====
+<script>
+// ===== NAVIGATION =====
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>{
+    p.classList.remove('active');
+  });
+  document.getElementById(id).classList.add('active');
+}
+
+// ===== EDIT ONLY IDS =====
+
+// 10 devs
 const developers = [
   {name:"Dev1", role:"Developer", userId:1},
   {name:"Dev2", role:"Developer", userId:2},
@@ -145,7 +191,7 @@ const developers = [
   {name:"Dev10", role:"Developer", userId:10}
 ];
 
-// ===== 7 MODERATORS =====
+// 7 mods
 const moderators = [
   {name:"Mod1", role:"Moderator", userId:11},
   {name:"Mod2", role:"Moderator", userId:12},
@@ -156,25 +202,14 @@ const moderators = [
   {name:"Mod7", role:"Moderator", userId:17}
 ];
 
-// =================================================
-// ⚙️ DO NOT TOUCH BELOW
-// =================================================
-
+// ===== CARD CREATOR =====
 function createCard(member){
   const card = document.createElement('div');
   card.className = 'staff-card';
 
   const img = document.createElement('img');
-
-  if(member.userId && member.userId !== 0){
-    img.src = `https://www.roblox.com/headshot-thumbnail/image?userId=${member.userId}&width=150&height=150&format=png`;
-  } else {
-    img.src = "https://via.placeholder.com/150?text=No+ID";
-  }
-
-  img.onerror = () => {
-    img.src = "https://via.placeholder.com/150?text=No+Avatar";
-  };
+  img.src = `https://www.roblox.com/headshot-thumbnail/image?userId=${member.userId}&width=150&height=150&format=png`;
+  img.onerror = () => img.src = "https://via.placeholder.com/150";
 
   const name = document.createElement('div');
   name.textContent = member.name;
@@ -186,18 +221,12 @@ function createCard(member){
   card.appendChild(img);
   card.appendChild(name);
   card.appendChild(role);
-
   return card;
 }
 
-// render devs
-const devGrid = document.getElementById('devGrid');
-developers.forEach(m => devGrid.appendChild(createCard(m)));
-
-// render mods
-const modGrid = document.getElementById('modGrid');
-moderators.forEach(m => modGrid.appendChild(createCard(m)));
-
+// render
+developers.forEach(m=>devGrid.appendChild(createCard(m)));
+moderators.forEach(m=>modGrid.appendChild(createCard(m)));
 </script>
 
 </body>
