@@ -274,17 +274,34 @@ const moderators = [
   { name: "Mod7", role: "Moderator", userId: 0 }
 ];
 
-// ================= CREATE CARD =================
+// ================= CREATE CARD (FIXED AVATARS) =================
 function createCard(member) {
   const card = document.createElement('div');
   card.className = 'staff-card';
 
+  // avatar image
   const img = document.createElement('img');
-  img.src = `https://www.roblox.com/headshot-thumbnail/image?userId=${member.userId}&width=150&height=150&format=png`;
+  img.src = "https://via.placeholder.com/150?text=Loading";
 
+  // ⭐ ROBLOX THUMBNAIL API (reliable)
+  fetch(`https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=${member.userId}&size=150x150&format=Png&isCircular=false`)
+    .then(res => res.json())
+    .then(data => {
+      if (data?.data?.[0]?.imageUrl) {
+        img.src = data.data[0].imageUrl;
+      } else {
+        img.src = "https://via.placeholder.com/150?text=No+Avatar";
+      }
+    })
+    .catch(() => {
+      img.src = "https://via.placeholder.com/150?text=Error";
+    });
+
+  // name
   const name = document.createElement('div');
   name.textContent = member.name;
 
+  // role
   const role = document.createElement('div');
   role.style.opacity = "0.7";
   role.style.fontSize = "13px";
@@ -293,6 +310,7 @@ function createCard(member) {
   card.appendChild(img);
   card.appendChild(name);
   card.appendChild(role);
+
   return card;
 }
 
