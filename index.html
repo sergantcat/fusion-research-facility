@@ -26,19 +26,6 @@
     }
     @keyframes float { from { transform: translateY(0); } to { transform: translateY(-120vh); } }
 
-    /* TOP LOGO */
-    .top-logo {
-      text-align: center;
-      padding: 30px 20px 10px;
-    }
-
-    .top-logo img {
-      max-width: 260px;
-      width: 70%;
-      height: auto;
-      filter: drop-shadow(0 0 18px rgba(77,163,255,0.45));
-    }
-
     /* NAVBAR */
     nav {
       position: sticky;
@@ -51,6 +38,15 @@
       justify-content: center;
       align-items: center;
       z-index: 1000;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .site-title {
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #7ec3ff;
+      font-size: 1.1rem;
     }
 
     .nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
@@ -64,13 +60,32 @@
     }
     .nav-links a:hover { background: rgba(77,163,255,0.15); color: #7ec3ff; }
 
+    /* LOGO UNDER NAV */
+    .top-logo {
+      text-align: center;
+      padding: 30px 20px 10px;
+    }
+
+    .top-logo img {
+      max-width: 280px;
+      width: 70%;
+      height: auto;
+      filter: drop-shadow(0 0 18px rgba(77,163,255,0.45));
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .top-logo img:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 28px rgba(77,163,255,0.75));
+    }
+
     /* SECTIONS */
     section {
       max-width: 1100px;
       margin: auto;
       padding: 90px 20px;
       text-align: center;
-      scroll-margin-top: 80px;
+      scroll-margin-top: 100px;
     }
 
     h1, h2 { margin-bottom: 14px; letter-spacing: 1px; }
@@ -122,18 +137,20 @@
     @media (max-width: 600px) {
       section { padding: 70px 16px; }
       .top-logo img { max-width: 200px; }
+      .site-title { font-size: 1rem; }
     }
   </style></head>
-<body>  <div id="particles"></div>  <!-- GAME LOGO (PUTS YOUR logo.png ABOVE EVERYTHING) -->  <div class="top-logo">
-    <img src="logo.png" alt="Fusion Research Facility Logo">
-  </div>  <!-- NAVIGATION -->  <nav>
+<body>  <div id="particles"></div>  <!-- NAVIGATION WITH TITLE -->  <nav>
+    <div class="site-title">FUSION RESEARCH FACILITY</div>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#history">History</a>
       <a href="#staff">Staff</a>
       <a href="#links">Links</a>
     </div>
-  </nav>  <!-- ABOUT -->  <section id="about">
+  </nav>  <!-- LOGO NOW UNDER THE NAV (AS REQUESTED) -->  <div class="top-logo">
+    <img src="logo.png" alt="Fusion Research Facility Logo">
+  </div>  <!-- ABOUT -->  <section id="about">
     <h1>About The Game</h1>
     <p>
       Fusion Research Facility is a sci-fi Roblox experience where players manage,
@@ -173,7 +190,7 @@
       particles.appendChild(p);
     }
 
-    /* ===== AUTO ROBLOX AVATARS ===== */
+    /* AUTO ROBLOX AVATARS */
     const developers = [
       "Roblox", "Builderman", "Dev3", "Dev4", "Dev5",
       "Dev6", "Dev7", "Dev8", "Dev9", "Dev10"
