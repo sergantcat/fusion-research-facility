@@ -6,83 +6,96 @@
 <title>Fusion Research Facility</title>
 
 <style>
-  body{
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:#0b0f19;
-    color:white;
-    text-align:center;
-  }
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:linear-gradient(180deg,#050914,#0b1224);
+  color:white;
+  text-align:center;
+}
 
-  /* ===== NAVBAR ===== */
+/* ===== NAVBAR ===== */
+.navbar{
+  display:flex;
+  justify-content:center;
+  gap:35px;
+  padding:18px;
+  background:#0f1629;
+  font-weight:bold;
+  letter-spacing:1px;
+  flex-wrap:wrap;
+}
+
+.navbar a{
+  color:white;
+  text-decoration:none;
+  transition:.25s;
+}
+
+.navbar a:hover{
+  color:#6aa7ff;
+}
+
+/* ===== LOGO ===== */
+.logo{
+  margin-top:25px;
+}
+
+.logo img{
+  width:150px;
+  max-width:80%;
+}
+
+/* ===== SECTION ===== */
+.section{
+  margin-top:50px;
+  padding:20px;
+}
+
+/* ===== GRID ===== */
+.staff-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:25px;
+  max-width:1100px;
+  margin:auto;
+}
+
+/* ===== CARD ===== */
+.staff-card{
+  background:#121a2f;
+  padding:18px;
+  border-radius:16px;
+  transition:.25s;
+  box-shadow:0 0 15px rgba(0,0,0,.4);
+}
+
+.staff-card:hover{
+  transform:translateY(-6px);
+  background:#182241;
+  box-shadow:0 0 25px rgba(80,130,255,.25);
+}
+
+.staff-card img{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  margin-bottom:10px;
+  border:2px solid #6aa7ff33;
+}
+
+.role{
+  opacity:.7;
+  font-size:13px;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:600px){
   .navbar{
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    padding:18px;
-    background:#0f1629;
-    font-weight:bold;
-    letter-spacing:1px;
+    gap:18px;
+    font-size:14px;
   }
-
-  .navbar a{
-    color:white;
-    text-decoration:none;
-    transition:0.2s;
-  }
-
-  .navbar a:hover{
-    color:#6aa7ff;
-  }
-
-  /* ===== LOGO ===== */
-  .logo{
-    margin-top:25px;
-  }
-
-  .logo img{
-    width:140px;
-  }
-
-  .title{
-    font-size:28px;
-    margin-top:10px;
-    font-weight:bold;
-    letter-spacing:2px;
-  }
-
-  /* ===== STAFF GRID ===== */
-  .staff-section{
-    margin-top:50px;
-    padding:20px;
-  }
-
-  .staff-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
-    gap:25px;
-    max-width:900px;
-    margin:auto;
-  }
-
-  .staff-card{
-    background:#121a2f;
-    padding:18px;
-    border-radius:14px;
-    transition:0.25s;
-  }
-
-  .staff-card:hover{
-    transform:translateY(-4px);
-    background:#182241;
-  }
-
-  .staff-card img{
-    width:110px;
-    height:110px;
-    border-radius:50%;
-    margin-bottom:10px;
-  }
+}
 </style>
 </head>
 
@@ -93,35 +106,59 @@
   <a href="#">FUSION RESEARCH FACILITY</a>
   <a href="#">ABOUT</a>
   <a href="#">STAFF</a>
+  <a href="#">LINKS</a>
 </div>
 
-<!-- ===== LOGO UNDER NAV ===== -->
+<!-- ===== LOGO ===== -->
 <div class="logo">
-  <!-- PUT YOUR logo.png IN SAME FOLDER -->
-  <img src="logo.png" alt="Logo">
-  <div class="title">FUSION RESEARCH FACILITY</div>
+  <img src="logo.png" alt="Fusion Logo">
 </div>
 
-<!-- ===== STAFF ===== -->
-<div class="staff-section">
-  <h2>Staff Team</h2>
-  <div class="staff-grid" id="staffGrid"></div>
+<!-- ================= DEVELOPERS ================= -->
+<div class="section">
+  <h2>Developers</h2>
+  <div class="staff-grid" id="devGrid"></div>
+</div>
+
+<!-- ================= MODERATORS ================= -->
+<div class="section">
+  <h2>Moderators</h2>
+  <div class="staff-grid" id="modGrid"></div>
 </div>
 
 <script>
-// ============================================
-// 🔥 ONLY EDIT USER IDS + NAMES HERE
-// ============================================
+// =================================================
+// 🔥 EDIT ONLY USERIDS + NAMES
+// =================================================
 
-const staffMembers = [
-  { name:"OwnerName", role:"Owner", userId:1 },
-  { name:"DevName", role:"Developer", userId:2 },
-  { name:"ModName", role:"Moderator", userId:3 }
+// ===== 10 DEVELOPERS =====
+const developers = [
+  {name:"Dev1", role:"Developer", userId:1},
+  {name:"Dev2", role:"Developer", userId:2},
+  {name:"Dev3", role:"Developer", userId:3},
+  {name:"Dev4", role:"Developer", userId:4},
+  {name:"Dev5", role:"Developer", userId:5},
+  {name:"Dev6", role:"Developer", userId:6},
+  {name:"Dev7", role:"Developer", userId:7},
+  {name:"Dev8", role:"Developer", userId:8},
+  {name:"Dev9", role:"Developer", userId:9},
+  {name:"Dev10", role:"Developer", userId:10}
 ];
 
-// ============================================
-// DO NOT TOUCH BELOW (it works)
-// ============================================
+// ===== 7 MODERATORS =====
+const moderators = [
+  {name:"Mod1", role:"Moderator", userId:11},
+  {name:"Mod2", role:"Moderator", userId:12},
+  {name:"Mod3", role:"Moderator", userId:13},
+  {name:"Mod4", role:"Moderator", userId:14},
+  {name:"Mod5", role:"Moderator", userId:15},
+  {name:"Mod6", role:"Moderator", userId:16},
+  {name:"Mod7", role:"Moderator", userId:17}
+];
+
+// =================================================
+// ⚙️ DO NOT TOUCH BELOW
+// =================================================
 
 function createCard(member){
   const card = document.createElement('div');
@@ -129,7 +166,6 @@ function createCard(member){
 
   const img = document.createElement('img');
 
-  // ⭐ MOST RELIABLE ROBLOX HEADSHOT
   if(member.userId && member.userId !== 0){
     img.src = `https://www.roblox.com/headshot-thumbnail/image?userId=${member.userId}&width=150&height=150&format=png`;
   } else {
@@ -144,8 +180,7 @@ function createCard(member){
   name.textContent = member.name;
 
   const role = document.createElement('div');
-  role.style.opacity = "0.7";
-  role.style.fontSize = "13px";
+  role.className = 'role';
   role.textContent = member.role;
 
   card.appendChild(img);
@@ -155,10 +190,14 @@ function createCard(member){
   return card;
 }
 
-const grid = document.getElementById('staffGrid');
-staffMembers.forEach(m => {
-  grid.appendChild(createCard(m));
-});
+// render devs
+const devGrid = document.getElementById('devGrid');
+developers.forEach(m => devGrid.appendChild(createCard(m)));
+
+// render mods
+const modGrid = document.getElementById('modGrid');
+moderators.forEach(m => modGrid.appendChild(createCard(m)));
+
 </script>
 
 </body>
