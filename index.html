@@ -6,31 +6,19 @@
 <title>Fusion Research Facility</title>
 
 <style>
-/* ===== RESET ===== */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, Helvetica, sans-serif;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
 body{
-  background: radial-gradient(circle at top, #0a1a3a, #000814);
+  background:radial-gradient(circle at top,#0a1a3a,#000814);
   color:white;
   overflow-x:hidden;
 }
 
-/* ===== PARTICLES ===== */
+/* particles */
 #particles{
   position:fixed;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
+  inset:0;
   z-index:-1;
-  overflow:hidden;
 }
-
 .particle{
   position:absolute;
   width:3px;
@@ -38,15 +26,14 @@ body{
   background:#4fd1ff;
   border-radius:50%;
   opacity:.7;
-  animation: float linear infinite;
+  animation:float linear infinite;
 }
-
 @keyframes float{
   from{transform:translateY(0)}
   to{transform:translateY(-120vh)}
 }
 
-/* ===== NAVBAR ===== */
+/* navbar */
 .navbar{
   position:sticky;
   top:0;
@@ -59,7 +46,6 @@ body{
   flex-wrap:wrap;
   z-index:10;
 }
-
 .navbar button{
   background:none;
   border:none;
@@ -69,56 +55,39 @@ body{
   font-size:16px;
   transition:.25s;
 }
+.navbar button:hover{color:white;transform:scale(1.1)}
 
-.navbar button:hover{
-  color:white;
-  transform:scale(1.1);
-}
-
-/* ===== LOGO ===== */
-.logo-container{
-  text-align:center;
-  padding:30px 10px 10px;
-}
-
+/* logo */
+.logo-container{text-align:center;padding:30px 10px 10px}
 .logo-container img{
-  width:120px;
+  width:130px;
   max-width:40vw;
   filter:drop-shadow(0 0 15px #38bdf8);
 }
 
-/* ===== SECTIONS ===== */
+/* sections */
 .section{
   display:none;
   padding:40px 20px;
   max-width:1200px;
   margin:auto;
-  animation:fade .4s ease;
+  animation:fade .35s ease;
 }
-
-.section.active{
-  display:block;
-}
-
+.section.active{display:block}
 @keyframes fade{
-  from{opacity:0; transform:translateY(15px)}
-  to{opacity:1; transform:translateY(0)}
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
 }
 
-h1,h2{
-  text-align:center;
-  margin-bottom:20px;
-  color:#7dd3fc;
-}
+h1,h2{text-align:center;margin-bottom:20px;color:#7dd3fc}
 
-/* ===== STAFF GRID ===== */
+/* staff */
 .staff-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
   gap:20px;
   margin-top:25px;
 }
-
 .staff-card{
   background:rgba(255,255,255,.05);
   border:1px solid rgba(125,211,252,.25);
@@ -127,12 +96,10 @@ h1,h2{
   text-align:center;
   transition:.25s;
 }
-
 .staff-card:hover{
   transform:translateY(-6px);
   box-shadow:0 0 20px rgba(56,189,248,.4);
 }
-
 .staff-card img{
   width:90px;
   height:90px;
@@ -141,7 +108,7 @@ h1,h2{
   border:2px solid #38bdf8;
 }
 
-/* ===== LINKS ===== */
+/* links */
 .link-buttons{
   display:flex;
   flex-wrap:wrap;
@@ -149,7 +116,6 @@ h1,h2{
   gap:15px;
   margin-top:20px;
 }
-
 .btn{
   padding:12px 22px;
   background:#0ea5e9;
@@ -158,25 +124,9 @@ h1,h2{
   border-radius:8px;
   transition:.25s;
 }
+.btn:hover{background:#38bdf8;transform:translateY(-2px)}
 
-.btn:hover{
-  background:#38bdf8;
-  transform:translateY(-2px);
-}
-
-/* ===== FOOTER ===== */
-footer{
-  text-align:center;
-  padding:30px 10px;
-  opacity:.7;
-}
-
-/* ===== MOBILE ===== */
-@media (max-width:600px){
-  .navbar button{
-    font-size:14px;
-  }
-}
+footer{text-align:center;padding:30px 10px;opacity:.7}
 </style>
 </head>
 
@@ -184,7 +134,7 @@ footer{
 
 <div id="particles"></div>
 
-<!-- ===== NAVBAR ===== -->
+<!-- NAV -->
 <div class="navbar">
   <button onclick="showSection('about')">ABOUT</button>
   <button onclick="showSection('staff')">STAFF</button>
@@ -192,62 +142,59 @@ footer{
   <button onclick="showSection('links')">LINKS</button>
 </div>
 
-<!-- ===== LOGO ===== -->
+<!-- LOGO -->
 <div class="logo-container">
-  <img src="logo.png" alt="Fusion Research Facility Logo">
+  <img src="logo.png" alt="FRF Logo">
 </div>
 
-<!-- ===== ABOUT ===== -->
+<!-- ABOUT -->
 <section id="about" class="section active">
   <h1>Fusion Research Facility</h1>
   <p style="text-align:center;max-width:800px;margin:auto;">
-    Fusion Research Facility is a sci-fi Roblox experience where players explore a high-security
-    research complex, interact with advanced systems, and survive unexpected facility events.
-    Work together, maintain the reactor, and uncover the secrets hidden within the facility.
+    Fusion Research Facility is a sci-fi Roblox experience where players explore
+    a high-security research complex, manage advanced systems, and survive
+    unexpected facility events.
   </p>
 </section>
 
-<!-- ===== STAFF ===== -->
+<!-- STAFF -->
 <section id="staff" class="section">
   <h2>Developers</h2>
   <div id="devGrid" class="staff-grid"></div>
 
-  <h2 style="margin-top:40px;">Moderators</h2>
+  <h2 style="margin-top:40px">Moderators</h2>
   <div id="modGrid" class="staff-grid"></div>
 </section>
 
-<!-- ===== HISTORY ===== -->
+<!-- HISTORY -->
 <section id="history" class="section">
   <h1>Game History</h1>
   <p style="text-align:center;max-width:800px;margin:auto;">
-    Fusion Research Facility began as an ambitious sci-fi project focused on realism,
-    atmosphere, and immersive facility gameplay. Over time, the game evolved with new
-    systems, staff members, and major improvements to create the experience players enjoy today.
+    The facility started as an ambitious sci-fi project and evolved into a
+    fully immersive research experience with advanced systems and staff teams.
   </p>
 </section>
 
-<!-- ===== LINKS ===== -->
+<!-- LINKS -->
 <section id="links" class="section">
   <h1>Game Links</h1>
   <div class="link-buttons">
-    <a class="btn" href="#" target="_blank">https://discord.gg/fvrcwEC58G</a>
-    <a class="btn" href="#" target="_blank">https://www.roblox.com/share/g/327048760</a>
-    <a class="btn" href="#" target="_blank">Play>https://www.roblox.com/share?code=c3c14feab6d21e468a36a3025bff6caa&type=ExperienceDetails&stamp=1772403119211</a>
+    <a class="btn" href="#" target="_blank">Discord Server</a>
+    <a class="btn" href="#" target="_blank">Roblox Group</a>
+    <a class="btn" href="#" target="_blank">Play Game</a>
   </div>
 </section>
 
-<footer>
-  © 2026 Fusion Research Facility
-</footer>
+<footer>© 2026 Fusion Research Facility</footer>
 
 <script>
-/* ===== NAVIGATION ===== */
+/* navigation */
 function showSection(id){
   document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
   document.getElementById(id).classList.add("active");
 }
 
-/* ===== PARTICLES ===== */
+/* particles */
 const particles=document.getElementById("particles");
 for(let i=0;i<60;i++){
   const p=document.createElement("div");
@@ -258,41 +205,48 @@ for(let i=0;i<60;i++){
   particles.appendChild(p);
 }
 
-/* ===== STAFF DATA ===== */
+/* staff data (YOUR IDS KEPT) */
 const developers=[
-  {name:"captainUSC1",role:"Developer",userId:8562174003},
-  {name:"KirillReactorEmp2K11",role:"Developer",userId:1638062564},
-  {name:"iiNeutronium",role:"Developer",userId:1935265156},
-  {name:"NikitaDomenik",role:"Developer",userId:2230675045},
-  {name:"Fuzzy",role:"Developer",userId:3554054866},
-  {name:"Airspeed60",role:"Developer",userId:3724768811},
-  {name:"Fimoz",role:"Developer",userId:5507221697},
-  {name:"Homejungle123",role:"Developer",userId:5751375102},
-  {name:"James",role:"Developer",userId:547303732},
-  {name:"Luffy",role:"Developer",userId:3527990039},
-  {name:"AnNoobi5",role:"Developer",userId:5765088114}
+{name:"captainUSC1",role:"Developer",userId:8562174003},
+{name:"KirillReactorEmp2K11",role:"Developer",userId:1638062564},
+{name:"iiNeutronium",role:"Developer",userId:1935265156},
+{name:"NikitaDomenik",role:"Developer",userId:2230675045},
+{name:"Fuzzy",role:"Developer",userId:3554054866},
+{name:"Airspeed60",role:"Developer",userId:3724768811},
+{name:"Fimoz",role:"Developer",userId:5507221697},
+{name:"Homejungle123",role:"Developer",userId:5751375102},
+{name:"James",role:"Developer",userId:547303732},
+{name:"Luffy",role:"Developer",userId:3527990039},
+{name:"AnNoobi5",role:"Developer",userId:5765088114}
 ];
 
 const moderators=[
-  {name:"Armed_F16",role:"Moderator",userId:1002821545},
-  {name:"erycd14",role:"Moderator",userId:0},
-  {name:"James",role:"Moderator",userId:547303732},
-  {name:"AnNoobi5",role:"Moderator",userId:5765088114},
-  {name:"PCS802",role:"Moderator",userId:5453594964},
-  {name:"Project_Dreadman",role:"Moderator",userId:3527990039},
-  {name:"mrdeegamer",role:"Moderator",userId:1649684920}
+{name:"Armed_F16",role:"Moderator",userId:1002821545},
+{name:"erycd14",role:"Moderator",userId:0},
+{name:"James",role:"Moderator",userId:547303732},
+{name:"AnNoobi5",role:"Moderator",userId:5765088114},
+{name:"PCS802",role:"Moderator",userId:5453594964},
+{name:"Project_Dreadman",role:"Moderator",userId:3527990039},
+{name:"mrdeegamer",role:"Moderator",userId:1649684920}
 ];
 
-/* ===== CREATE CARD ===== */
-function createCard(member){
+/* avatar loader */
+async function createCard(member){
   const card=document.createElement("div");
   card.className="staff-card";
 
   const img=document.createElement("img");
-  img.src=`https://www.roblox.com/headshot-thumbnail/image?userId=${member.userId}&width=150&height=150&format=png`;
-  img.onerror=function(){
-    this.src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-Png/0/150/150/AvatarHeadshot/Png/noFilter";
-  };
+  img.src="https://tr.rbxcdn.com/default-avatar.png";
+
+  try{
+    const res=await fetch(
+      `https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=${member.userId}&size=150x150&format=Png&isCircular=false`
+    );
+    const data=await res.json();
+    if(data?.data?.[0]?.imageUrl){
+      img.src=data.data[0].imageUrl;
+    }
+  }catch{}
 
   const name=document.createElement("div");
   name.textContent=member.name;
@@ -301,21 +255,19 @@ function createCard(member){
   role.style.opacity=".7";
   role.textContent=member.role;
 
-  card.appendChild(img);
-  card.appendChild(name);
-  card.appendChild(role);
-
+  card.append(img,name,role);
   return card;
 }
 
-/* ===== RENDER STAFF ===== */
-developers.forEach(d=>{
-  document.getElementById("devGrid").appendChild(createCard(d));
-});
-
-moderators.forEach(m=>{
-  document.getElementById("modGrid").appendChild(createCard(m));
-});
+/* render */
+(async()=>{
+  for(const d of developers){
+    document.getElementById("devGrid").appendChild(await createCard(d));
+  }
+  for(const m of moderators){
+    document.getElementById("modGrid").appendChild(await createCard(m));
+  }
+})();
 </script>
 
 </body>
