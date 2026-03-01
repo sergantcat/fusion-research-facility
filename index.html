@@ -6,163 +6,162 @@
 <title>Fusion Research Facility</title>
 
 <style>
-/* ================= BASE ================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
-body {
+body{
   background: radial-gradient(circle at top, #0a1a2f, #02050d);
-  color: white;
-  overflow-x: hidden;
+  color:white;
+  overflow-x:hidden;
 }
 
-/* ================= NAVBAR ================= */
-.navbar {
-  position: sticky;
-  top: 0;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(10px);
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 18px;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(0,255,255,0.15);
+/* NAVBAR */
+.navbar{
+  position:sticky;
+  top:0;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  padding:18px;
+  z-index:1000;
+  border-bottom:1px solid rgba(0,255,255,0.15);
 }
 
-.navbar button {
-  background: transparent;
-  border: none;
-  color: #8fd3ff;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.25s;
+.navbar button{
+  background:transparent;
+  border:none;
+  color:#8fd3ff;
+  font-size:16px;
+  cursor:pointer;
+  transition:.25s;
 }
 
-.navbar button:hover {
-  color: #00eaff;
-  transform: translateY(-2px);
+.navbar button:hover{
+  color:#00eaff;
+  transform:translateY(-2px);
 }
 
-/* ================= LOGO ================= */
-.logo-wrapper {
-  text-align: center;
-  margin: 30px 0 10px;
+/* LOGO */
+.logo-wrapper{
+  text-align:center;
+  margin:30px 0 10px;
 }
 
-.logo-wrapper img {
-  width: min(260px, 70vw);
-  filter: drop-shadow(0 0 20px #00eaffaa);
-  transition: 0.4s;
+.logo-wrapper img{
+  width:min(260px,70vw);
+  filter:drop-shadow(0 0 20px #00eaffaa);
+  transition:.4s;
 }
 
-.logo-wrapper img:hover {
-  transform: scale(1.05);
+.logo-wrapper img:hover{
+  transform:scale(1.05);
 }
 
-/* ================= SECTIONS ================= */
-.section {
-  max-width: 1100px;
-  margin: auto;
-  padding: 40px 20px;
-  opacity: 0;
-  transform: translateY(25px);
-  transition: all 0.6s ease;
-  display: none;
+/* SECTIONS */
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px;
+  opacity:0;
+  transform:translateY(25px);
+  transition:all .6s ease;
+  display:none;
 }
 
-.section.active {
-  opacity: 1;
-  transform: translateY(0);
-  display: block;
+.section.active{
+  opacity:1;
+  transform:translateY(0);
+  display:block;
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 25px;
-  color: #00eaff;
+h2{
+  text-align:center;
+  margin-bottom:25px;
+  color:#00eaff;
 }
 
-/* ================= STAFF GRID ================= */
-.staff-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 20px;
+/* STAFF GRID */
+.staff-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:20px;
 }
 
-.staff-card {
-  background: rgba(0,0,0,0.45);
-  border: 1px solid rgba(0,255,255,0.15);
-  border-radius: 14px;
-  padding: 15px;
-  text-align: center;
-  transition: 0.25s;
+.staff-card{
+  background:rgba(0,0,0,0.45);
+  border:1px solid rgba(0,255,255,0.15);
+  border-radius:14px;
+  padding:15px;
+  text-align:center;
+  transition:.25s;
 }
 
-.staff-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  border-color: #00eaff;
+.staff-card:hover{
+  transform:translateY(-6px) scale(1.03);
+  border-color:#00eaff;
 }
 
-.staff-card img {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  margin-bottom: 10px;
+.staff-card img{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  margin-bottom:10px;
 }
 
-/* ================= LINKS ================= */
-.link-buttons {
-  text-align: center;
+/* LINKS */
+.link-buttons{
+  text-align:center;
 }
 
-.btn {
-  display: inline-block;
-  margin: 10px;
-  padding: 12px 22px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #00eaff, #0066ff);
-  color: white;
-  text-decoration: none;
-  transition: 0.25s;
+.btn{
+  display:inline-block;
+  margin:10px;
+  padding:12px 22px;
+  border-radius:8px;
+  background:linear-gradient(135deg,#00eaff,#0066ff);
+  color:white;
+  text-decoration:none;
+  transition:.25s;
 }
 
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 15px #00eaff88;
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 15px #00eaff88;
 }
 
-/* ================= PARTICLES ================= */
-#particles {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
+/* PARTICLES */
+#particles{
+  position:fixed;
+  inset:0;
+  z-index:-1;
 }
 
-.particle {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: #00eaff;
-  opacity: 0.7;
-  animation: float linear infinite;
+.particle{
+  position:absolute;
+  width:2px;
+  height:2px;
+  background:#00eaff;
+  opacity:.7;
+  animation:float linear infinite;
 }
 
-@keyframes float {
-  from { transform: translateY(0); }
-  to { transform: translateY(-100vh); }
+@keyframes float{
+  from{transform:translateY(0);}
+  to{transform:translateY(-100vh);}
 }
 
-/* ================= FOOTER ================= */
-footer {
-  text-align: center;
-  padding: 30px;
-  opacity: 0.6;
-  font-size: 14px;
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  opacity:.6;
+  font-size:14px;
 }
 </style>
 </head>
@@ -171,7 +170,7 @@ footer {
 
 <div id="particles"></div>
 
-<!-- ================= NAVBAR ================= -->
+<!-- NAVBAR -->
 <div class="navbar">
   <button onclick="showSection('about')">About</button>
   <button onclick="showSection('staff')">Staff</button>
@@ -179,23 +178,22 @@ footer {
   <button onclick="showSection('links')">Links</button>
 </div>
 
-<!-- ================= LOGO ================= -->
+<!-- LOGO -->
 <div class="logo-wrapper">
   <img src="logo.png" alt="Fusion Research Facility Logo">
 </div>
 
-<!-- ================= ABOUT ================= -->
+<!-- ABOUT -->
 <section id="about" class="section active">
   <h2>About Fusion Research Facility</h2>
   <p style="text-align:center;max-width:800px;margin:auto;">
     Fusion Research Facility is a sci-fi Roblox experience where players explore
     a high-tech research complex, manage dangerous experiments, and survive
-    unexpected facility events. Work with others, uncover secrets, and keep
-    the facility stable… or watch it collapse.
+    unexpected facility events.
   </p>
 </section>
 
-<!-- ================= STAFF ================= -->
+<!-- STAFF -->
 <section id="staff" class="section">
   <h2>Developers</h2>
   <div id="devGrid" class="staff-grid"></div>
@@ -204,22 +202,20 @@ footer {
   <div id="modGrid" class="staff-grid"></div>
 </section>
 
-<!-- ================= HISTORY ================= -->
+<!-- HISTORY -->
 <section id="history" class="section">
   <h2>Game History</h2>
   <p style="text-align:center;max-width:800px;margin:auto;">
-    The Fusion Research Facility began as a small experimental Roblox project
-    and quickly evolved into a full sci-fi experience. With continuous updates,
-    new systems, and expanding lore, the facility grows more advanced — and
-    more dangerous — over time.
+    The Fusion Research Facility started as a small experimental Roblox project
+    and evolved into a full sci-fi experience with expanding systems and lore.
   </p>
 </section>
 
-<!-- ================= LINKS ================= -->
+<!-- LINKS -->
 <section id="links" class="section">
   <h2>Official Links</h2>
   <div class="link-buttons">
-    <!-- 🔴 REPLACE THESE LINKS -->
+    <!-- 🔴 REPLACE THESE -->
     <a class="btn" href="#" target="_blank">Discord Server</a>
     <a class="btn" href="#" target="_blank">Roblox Group</a>
     <a class="btn" href="#" target="_blank">Play Game</a>
@@ -231,95 +227,85 @@ footer {
 </footer>
 
 <script>
-// ================= NAVIGATION =================
-function showSection(id) {
-  document.querySelectorAll('.section').forEach(sec => {
+// NAVIGATION
+function showSection(id){
+  document.querySelectorAll('.section').forEach(sec=>{
     sec.classList.remove('active');
   });
   document.getElementById(id).classList.add('active');
 }
 
-// ================= PARTICLES =================
-const particles = document.getElementById('particles');
-for (let i = 0; i < 60; i++) {
-  const p = document.createElement('div');
-  p.className = 'particle';
-  p.style.left = Math.random() * 100 + 'vw';
-  p.style.top = Math.random() * 100 + 'vh';
-  p.style.animationDuration = (10 + Math.random() * 15) + 's';
+// PARTICLES
+const particles=document.getElementById('particles');
+for(let i=0;i<60;i++){
+  const p=document.createElement('div');
+  p.className='particle';
+  p.style.left=Math.random()*100+'vw';
+  p.style.top=Math.random()*100+'vh';
+  p.style.animationDuration=(10+Math.random()*15)+'s';
   particles.appendChild(p);
 }
 
-// ================= STAFF DATA (PUT REAL IDs) =================
-const developers = [
-  { name: "kolofdit", role: "Developer", userId: 2233675045 },
-  { name: "KirillG1632", role: "Developer", userId: 1638062564 },
-  { name: "Airspeed60", role: "Developer", userId: 3724768811 },
-  { name: "nichita10901", role: "Developer", userId: 5507221697 },
-  { name: "captainUSC1", role: "Developer", userId: 8562174003 },
-  { name: "Homejungle123", role: "Developer", userId: 5751375102 },
-  { name: "TheElder128", role: "Developer", userId: 547303732 },
-  { name: "Project_Dreadman", role: "Developer", userId: 3527990039 },
-  { name: "Kaper_polska3", role: "Developer", userId: 3554054866 },
-  { name: "jaxin6014", role: "Developer", userId: 1935265156 }
+// ===== YOUR STAFF (already correct IDs) =====
+const developers=[
+{ name:"kolofdit", role:"Developer", userId:2233675645 },
+{ name:"KirillG1632", role:"Developer", userId:1638062564 },
+{ name:"Airspeed60", role:"Developer", userId:3724768811 },
+{ name:"nichita10901", role:"Developer", userId:5507221697 },
+{ name:"captainUSC1", role:"Developer", userId:8562174003 },
+{ name:"Homejungle123", role:"Developer", userId:5751375102 },
+{ name:"TheElder128", role:"Developer", userId:547303732 },
+{ name:"Project_Dreadman", role:"Developer", userId:3527990039 },
+{ name:"Kaper_polska3", role:"Developer", userId:3554054866 },
+{ name:"jaxin6014", role:"Developer", userId:1935265156 }
 ];
 
-const moderators = [
-  { name: "Mod1", role: "Moderator", userId: 0 },
-  { name: "Mod2", role: "Moderator", userId: 0 },
-  { name: "Mod3", role: "Moderator", userId: 0 },
-  { name: "Mod4", role: "Moderator", userId: 0 },
-  { name: "Mod5", role: "Moderator", userId: 0 },
-  { name: "Mod6", role: "Moderator", userId: 0 },
-  { name: "Mod7", role: "Moderator", userId: 0 }
+const moderators=[
+{ name:"Mod1", role:"Moderator", userId:0 },
+{ name:"Mod2", role:"Moderator", userId:0 },
+{ name:"Mod3", role:"Moderator", userId:0 },
+{ name:"Mod4", role:"Moderator", userId:0 },
+{ name:"Mod5", role:"Moderator", userId:0 },
+{ name:"Mod6", role:"Moderator", userId:0 },
+{ name:"Mod7", role:"Moderator", userId:0 }
 ];
 
-// ================= CREATE CARD (FIXED AVATARS) =================
-function createCard(member) {
-  const card = document.createElement('div');
-  card.className = 'staff-card';
+// CREATE CARD (ROBUST)
+function createCard(member){
+  const card=document.createElement('div');
+  card.className='staff-card';
 
-  // avatar image
-  const img = document.createElement('img');
-  img.src = "https://via.placeholder.com/150?text=Loading";
+  const img=document.createElement('img');
+  img.src="https://via.placeholder.com/150?text=Loading";
 
-  // ⭐ ROBLOX THUMBNAIL API (reliable)
-  fetch(`https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=${member.userId}&size=150x150&format=Png&isCircular=false`)
-    .then(res => res.json())
-    .then(data => {
-      if (data?.data?.[0]?.imageUrl) {
-        img.src = data.data[0].imageUrl;
-      } else {
-        img.src = "https://via.placeholder.com/150?text=No+Avatar";
-      }
-    })
-    .catch(() => {
-      img.src = "https://via.placeholder.com/150?text=Error";
-    });
+  if(member.userId && member.userId!==0){
+    fetch(`https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=${member.userId}&size=150x150&format=Png&isCircular=false`)
+      .then(r=>r.json())
+      .then(data=>{
+        if(data?.data?.[0]?.imageUrl){
+          img.src=data.data[0].imageUrl;
+        }
+      })
+      .catch(()=>{});
+  }
 
-  // name
-  const name = document.createElement('div');
-  name.textContent = member.name;
+  const name=document.createElement('div');
+  name.textContent=member.name;
 
-  // role
-  const role = document.createElement('div');
-  role.style.opacity = "0.7";
-  role.style.fontSize = "13px";
-  role.textContent = member.role;
+  const role=document.createElement('div');
+  role.style.opacity="0.7";
+  role.style.fontSize="13px";
+  role.textContent=member.role;
 
   card.appendChild(img);
   card.appendChild(name);
   card.appendChild(role);
-
   return card;
 }
 
-// ================= LOAD STAFF =================
-const devGrid = document.getElementById('devGrid');
-developers.forEach(m => devGrid.appendChild(createCard(m)));
-
-const modGrid = document.getElementById('modGrid');
-moderators.forEach(m => modGrid.appendChild(createCard(m)));
+// LOAD STAFF
+developers.forEach(m=>document.getElementById('devGrid').appendChild(createCard(m)));
+moderators.forEach(m=>document.getElementById('modGrid').appendChild(createCard(m)));
 </script>
 
 </body>
